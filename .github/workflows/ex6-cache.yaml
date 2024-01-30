@@ -17,7 +17,7 @@ jobs:
           run: |
             npm install
         - name: create-cache
-          uses : action/cache@v4
+          uses : action/cache@v3
           with :
             path : ./node-modules
             key : ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -30,7 +30,7 @@ jobs:
         - name: checkout
           uses: actions/checkout@v3
         - name: recover-cache
-          uses : action/cache@v4
+          uses : action/cache@v3
           with :
             path : ./node-modules
             key : ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
