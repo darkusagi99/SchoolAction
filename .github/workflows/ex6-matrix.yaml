@@ -8,7 +8,7 @@ jobs:
   run-npm-install:
     strategy:
       matrix:
-        version: [14, lts]
+        version: [14, lts/*]
         os: [ubuntu-latest, ubuntu-20.04]
     runs-on: ${{ matrix.os }}
     steps:
