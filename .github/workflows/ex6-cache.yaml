@@ -12,16 +12,17 @@ jobs:
           uses: actions/setup-node@v3
           with:
             node-version: 'lts/*'
-        - name: run install
-          shell: bash
-          run: |
-            npm install
         - name: create-cache
           uses : actions/cache@v4
           with :
             path : ./node-modules
             key : ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
             restore-keys : ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        - name: run install
+          shell: bash
+          run: |
+            npm install
+
 
   run-npm-test:
     runs-on: ubuntu-latest
