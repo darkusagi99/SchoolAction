@@ -1,0 +1,10 @@
+name: Reusable Workflow
+on: 
+  workflow_dispatch:
+
+jobs:
+  call-sub-workflow :
+    uses : ./.github/workflows/ex4.yml
+    with:
+      node-version: 14
+  
