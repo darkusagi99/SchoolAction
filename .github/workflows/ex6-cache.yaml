@@ -21,7 +21,7 @@ jobs:
           with :
             path : ./node-modules
             key : ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-            restore-key : ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+            restore-keys : ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
 
   run-npm-test:
     runs-on: ubuntu-latest
@@ -34,7 +34,7 @@ jobs:
           with :
             path : ./node-modules
             key : ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-            restore-key : ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+            restore-keys : ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         - name : setup node
           uses: actions/setup-node@v3
           with:
