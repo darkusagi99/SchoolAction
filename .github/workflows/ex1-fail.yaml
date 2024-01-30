@@ -1,0 +1,40 @@
+name: npm test fail
+on: 
+  workflow_dispatch:
+               
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps: 
+      - name : checkout
+        uses: actions/checkout@v4
+
+      - name : install-node
+        uses: actions/setup-node@v4
+        with : 
+          node-version: 'lts/*'
+
+      - name : npm install
+        shell : bash
+        run : npm install
+
+  job2:
+    runs-on: ubuntu-latest
+    steps: 
+      - name : checkout
+        uses: actions/checkout@v4
+
+      - name : install-node
+        uses: actions/setup-node@v4
+        with : 
+          node-version: 'lts/*'
+
+      - name : npm test
+        shell : bash
+        run : npm test
+
+        
+
+      
+        
+        
